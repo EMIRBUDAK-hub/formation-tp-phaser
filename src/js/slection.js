@@ -113,13 +113,11 @@ export default class selection extends Phaser.Scene {
         if (gameOver) {
             return;
         }
-        if (Phaser.Input.Keyboard.JustDown(clavier.space) === true) {
-            this.scene.start("niveau1");
-        } 
+
         if (Phaser.Input.Keyboard.JustDown(clavier.space) == true) {
-            if (this.physics.overlap(player, this.porte1)) this.scene.start("niveau1");
-            if (this.physics.overlap(player, this.porte2)) this.scene.start("niveau2");
-            if (this.physics.overlap(player, this.porte3)) this.scene.start("niveau3");
+            if (this.physics.overlap(player, this.porte1)) this.scene.switch("niveau1");
+            if (this.physics.overlap(player, this.porte2)) this.scene.switch("niveau2");
+            if (this.physics.overlap(player, this.porte3)) this.scene.switch("niveau3");
         } 
 
     }
